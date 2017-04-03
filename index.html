@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Start developing C# on your Raspberry Pi in five minutes or less</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      a {
+        color: #a07cc0;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .inverse {
+        background: #272822;
+        color: #9b9c96;
+        /*text-shadow: 0 0 20px #333;*/
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse, inverse
+
+# Start developing C# on your Raspberry Pi in five minutes or less
+---
+class: center, middle, inverse
+
+# About me
+---
+layout: false
+class: center, middle, inverse
+# Carmen Long
+## Twitter: [@carmalou](https://twitter.com/carmalou)
+## Blog: [carmalou.com](http://carmalou.com)
+---
+class: center, middle, inverse
+
+# Step One: ssh into Raspberry Pi
+---
+class: left, middle, inverse
+
+# Step Two: install mono
+
+### `sudo apt-get update`
+### `sudo apt-get install mono-runtime`
+### `sudo apt-get install mono-complete`
+---
+class: center, middle, inverse
+
+# Step Three: Write your program
+---
+class: left, middle, inverse
+
+# HelloWorld.cs
+
+```c-sharp
+using System;
+
+public class HelloWorld
+{
+    static public void Main ()
+    {
+        Console.WriteLine ("Hello Mono World");
+    }
+}
+```
+---
+class: left, middle, inverse
+
+# Step Four: Compile to .exe
+
+### `mcs HelloWorld.cs` --> `HelloWorld.exe`
+---
+class: left, middle, inverse
+
+# Step Five: Run it!
+
+### `mono HelloWorld.exe` --> "Hello Mono World"
+---
+class: left, middle, inverse
+
+## Step Six: Copy Files From Another Computer (Optional)
+
+`scp /path/to/your/local/file remoteUser@some_address:/home/remoteUser/Documents`
+
+
+</textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
